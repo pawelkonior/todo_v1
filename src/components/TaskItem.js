@@ -5,7 +5,7 @@ function TaskItem({id, status, name, handleChangeStatus, handleDeleteTask}) {
                 className={status ? 'status done' : 'status active'}
                 onClick={() => handleChangeStatus(id)}
             />
-            {name}
+            <span>{name}</span>
             <button onClick={() => handleDeleteTask(id)}>x</button>
         </li>
     );

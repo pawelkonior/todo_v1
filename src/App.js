@@ -1,17 +1,32 @@
 import './App.css';
 import {useEffect, useState} from "react";
 
+import {collection, getDocs} from "firebase/firestore";
+
 import {loadFromLocalStorage, saveToLocalStorage} from "./utils/localstorage";
 import uuidGen from "./utils/uuid";
 
 import Headline from "./components/Headline";
 import TaskInput from "./components/TaskInput";
 import TaskList from "./components/TaskList";
+import {db} from "./firebase";
 
 function App() {
     const [value, setValue] = useState('');
     const [tasks, setTasks] = useState([]);
     const [selection, setSelection] = useState('all');
+
+    const getData = async () => {
+        const querySnapshot = await getDocs(collection(db, "todos"));
+        setTasks(querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data()
+        })));
+    }
+
+    useEffect(() => {
+        getData()
+    }, []);
 
     useEffect(() => {
         setTasks(loadFromLocalStorage('tds'));

@@ -1,0 +1,27 @@
+[debug] [2022-04-07T20:03:13.783Z] ----------------------------------------------------------------------
+[debug] [2022-04-07T20:03:13.784Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2022-04-07T20:03:13.785Z] CLI Version:   10.5.0
+[debug] [2022-04-07T20:03:13.785Z] Platform:      darwin
+[debug] [2022-04-07T20:03:13.785Z] Node Version:  v16.14.2
+[debug] [2022-04-07T20:03:13.786Z] Time:          Thu Apr 07 2022 22:03:13 GMT+0200 (Central European Summer Time)
+[debug] [2022-04-07T20:03:13.786Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-04-07T20:03:13.841Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-04-07T20:03:13.841Z] > authorizing via signed-in user (pawel.konior@gmail.com)
+[debug] [2022-04-07T20:03:13.841Z] [iam] checking project todo-d0297 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-04-07T20:03:13.843Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-d0297:testIamPermissions [none]
+[debug] [2022-04-07T20:03:13.843Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-d0297:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-07T20:03:14.682Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-d0297:testIamPermissions 200
+[debug] [2022-04-07T20:03:14.682Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/todo-d0297:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-04-07T20:03:14.683Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-d0297 [none]
+[debug] [2022-04-07T20:03:15.481Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-d0297 200
+[debug] [2022-04-07T20:03:15.481Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-d0297 {"projectId":"todo-d0297","projectNumber":"1061872637069","displayName":"todo","name":"projects/todo-d0297","resources":{"hostingSite":"todo-d0297","storageBucket":"todo-d0297.appspot.com","locationId":"europe-central2"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'todo-d0297'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-04-07T20:03:15.483Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/todo-d0297 [none]
+[debug] [2022-04-07T20:03:15.802Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/todo-d0297 200
+[debug] [2022-04-07T20:03:15.802Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/todo-d0297 {"projectId":"todo-d0297","projectNumber":"1061872637069","displayName":"todo","name":"projects/todo-d0297","resources":{"hostingSite":"todo-d0297","storageBucket":"todo-d0297.appspot.com","locationId":"europe-central2"},"state":"ACTIVE"}
+[debug] [2022-04-07T20:03:15.804Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/1061872637069/sites/todo-d0297/versions [none]
+[debug] [2022-04-07T20:03:15.804Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/1061872637069/sites/todo-d0297/versions {"config":{"rewrites":[{"glob":"**","path":"/index.html"}]},"labels":{"deployment-tool":"cli-firebase"}}

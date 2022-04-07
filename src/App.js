@@ -1,10 +1,7 @@
-import './App.css';
+import './App.scss';
 import {useEffect, useState} from "react";
 
-import {collection, getDocs, addDoc, updateDoc, deleteDoc, doc, writeBatch, onSnapshot} from "firebase/firestore";
-
-import {loadFromLocalStorage, saveToLocalStorage} from "./utils/localstorage";
-import uuidGen from "./utils/uuid";
+import {collection,  doc, writeBatch, onSnapshot} from "firebase/firestore";
 
 import Headline from "./components/Headline";
 import TaskInput from "./components/TaskInput";
